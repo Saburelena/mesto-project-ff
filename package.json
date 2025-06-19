@@ -10,7 +10,7 @@
     "deploy": "gh-pages -d dist -b gh-pages -m 'Deploy to GitHub Pages'"
   },
 
-  "homepage": "https://saburelena.github.io/mesto-project-ff",
+  "homepage": "./",
   "repository": {
     "type": "git",
     "url": "https://github.com/Saburelena/mesto-project-ff.git"

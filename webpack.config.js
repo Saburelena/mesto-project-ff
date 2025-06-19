@@ -9,7 +9,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
-        publicPath: './'
+        publicPath: '/mesto-project-ff/'
     },
 
     mode: 'development', 
@@ -37,7 +37,10 @@ module.exports = {
 
         {
             test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-            type: 'asset/resource'
+            type: 'asset/resource',
+            generator: {
+              filename: 'assets/[hash][ext][query]'
+            }
         },
 
         {
@@ -57,13 +60,23 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: './src/index.html',
           filename: 'index.html',
-          inject: 'body'
+          inject: 'body',
+          publicPath: '/mesto-project-ff/'
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
         new CopyPlugin({
           patterns: [
-            { from: 'src/images', to: 'images' },
+            { 
+              from: 'src/images', 
+              to: 'images',
+              noErrorOnMissing: true
+            },
+            {
+              from: 'src/vendor',
+              to: 'vendor',
+              noErrorOnMissing: true
+            }
           ],
         }),
       ],
