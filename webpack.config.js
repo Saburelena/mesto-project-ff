@@ -9,7 +9,9 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
-                publicPath: '/',
+        publicPath: process.env.NODE_ENV === 'production'
+            ? '/mesto-project-ff/'
+            : '/',
     },
 
     mode: 'development', 
