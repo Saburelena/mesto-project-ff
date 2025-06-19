@@ -1,0 +1,48 @@
+/* Стили для попапа аватара */
+.popup_type_avatar .popup__content {
+  max-width: 430px;
+  min-height: 272px;
+  padding: 36px;
+  box-sizing: border-box;
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.popup_type_avatar .popup__title {
+  margin: 0 0 24px 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.popup_type_avatar .popup__form {
+  margin: 0;
+  padding: 0;
+}
+
+.popup_type_avatar .popup__button {
+  margin-top: 24px;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .popup_type_avatar .popup__content {
+    max-width: calc(100% - 38px);
+    padding: 25px 22px;
+  }
+  
+  .popup_type_avatar .popup__title {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 45px;
+  }
+  
+  .popup_type_avatar .popup__button {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

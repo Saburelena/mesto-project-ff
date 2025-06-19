@@ -9,14 +9,22 @@
   justify-content: center;
   background: #000;
   border-radius: 2px;
-  border: none;
-  transition: visibility 0s, background 0.3s;
-  margin-top: 48px;
+  border: 1px solid #000;
+  transition: background-color 0.3s, border-color 0.3s, opacity 0.3s;
+  margin-top: 25px;
+  cursor: pointer;
 }
 
-.popup__button:hover {
+.popup__button:hover:not(:disabled) {
   background: rgba(0, 0, 0, 0.8);
   cursor: pointer;
+}
+
+.popup__button:disabled {
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+  cursor: default;
 }
 
 @media screen and (max-width: 568px) {
@@ -25,3 +33,4 @@
     line-height: 17px;
   }
 }
+

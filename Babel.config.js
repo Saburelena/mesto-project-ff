@@ -1,5 +1,5 @@
 const presets = [
-    ['@babel/preset-env', { // какой пресет использовать
+    ['@babel/preset-env', {
       targets: { // какие версии браузеров поддерживать
         edge: '17',
         ie: '11',
@@ -10,7 +10,8 @@ const presets = [
   
       // использовать полифилы для браузеров из свойства target
       // по умолчанию babel использует полифилы библиотеки core-js
-      useBuiltIns: "entry"
+      useBuiltIns: "entry",
+      corejs: '3.41.0' // Указываем версию core-js из package.json
     }]
   ];
   
