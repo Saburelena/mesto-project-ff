@@ -7,18 +7,20 @@
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -b gh-pages -m 'Deploy to GitHub Pages'"
   },
+
+  "homepage": "https://saburelena.github.io/mesto-project-ff",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dumskii-Artem/mesto-project-ff.git"
+    "url": "https://github.com/Saburelena/mesto-project-ff.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Dumskii-Artem/mesto-project-ff/issues"
   },
-  "homepage": "https://github.com/Dumskii-Artem/mesto-project-ff#readme",
+
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",

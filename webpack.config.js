@@ -9,19 +9,21 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
-        publicPath: process.env.NODE_ENV === 'production'
-            ? '/mesto-project-ff/'
-            : '/',
+        publicPath: './'
     },
 
     mode: 'development', 
 
     devServer: {
-        static: path.resolve(__dirname, './dist'), 
-        compress: true, 
-        port: 8080, 
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        port: 8080,
         open: true,
-        historyApiFallback: true 
+        historyApiFallback: {
+            index: 'index.html'
+        }
     },
 
     module: {
@@ -53,7 +55,9 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-          template: './src/index.html' 
+          template: './src/index.html',
+          filename: 'index.html',
+          inject: 'body'
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
