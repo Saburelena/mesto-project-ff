@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && webpack --mode production",
-    "dev": "webpack serve --mode development --open",
+    "dev": "webpack serve --mode development --open --config webpack.config.js",
+    "start": "webpack serve --mode development --open --config webpack.config.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

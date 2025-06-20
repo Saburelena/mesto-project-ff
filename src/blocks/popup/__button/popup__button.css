@@ -21,10 +21,18 @@
 }
 
 .popup__button:disabled {
-  background-color: #FFFFFF;
-  color: rgba(0, 0, 0, 0.2);
-  border-color: rgba(0, 0, 0, 0.2);
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
   cursor: default;
+  opacity: 0.8;
+}
+
+.popup__button_loading:disabled {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  cursor: wait;
 }
 
 @media screen and (max-width: 568px) {

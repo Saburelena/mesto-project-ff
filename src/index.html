@@ -6,14 +6,14 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <base href="/mesto-project-ff/">
-  <meta name="base-url" content="/mesto-project-ff/">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https:;">
+  <base href="<%= htmlWebpackPlugin.options.baseHref %>">
+  <meta name="base-url" content="<%= htmlWebpackPlugin.options.baseHref %>">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https: <%= htmlWebpackPlugin.options.baseHref %> ; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' https:;">
 </head>
 <body class="page">
 <div class="page__content">
   <header class="header page__section">
-    <img src="<%=require('./images/logo.svg')%>" alt="Логотип проекта место" class="logo header__logo"/>
+    <img src="<%= htmlWebpackPlugin.options.baseHref %>images/logo.svg" alt="Логотип проекта место" class="logo header__logo"/>
   </header>
   <main class="content">
     <section class="profile page__section">
@@ -43,7 +43,7 @@
     <div class="popup__content">
       <button type="button" class="popup__close"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
-      <form class="popup__form" name="edit-profile">
+      <form class="popup__form" name="edit-profile" novalidate>
         <div class="popup__form-field">
           <input 
             type="text" 
@@ -86,7 +86,7 @@
     <div class="popup__content">
       <button type="button" class="popup__close"></button>
       <h3 class="popup__title">Обновить аватар</h3>
-      <form class="popup__form" name="edit-avatar">
+      <form class="popup__form" name="edit-avatar" novalidate>
         <div class="popup__form-field">
           <input 
             type="url" 
@@ -109,7 +109,7 @@
     <div class="popup__content">
       <button type="button" class="popup__close"></button>
       <h3 class="popup__title">Новое место</h3>
-      <form class="popup__form" name="new-place">
+      <form class="popup__form" name="new-place" novalidate>
         <div class="popup__form-field">
           <input 
             type="text" 
@@ -148,7 +148,7 @@
     <div class="popup__content">
       <button type="button" class="popup__close"></button>
       <h3 class="popup__title">Вы уверены?</h3>
-      <form class="popup__form" name="confirm-form">
+      <form class="popup__form" name="confirm-form" novalidate>
         <button type="submit" class="button popup__button popup__button_confirm">Да</button>
       </form>
     </div>
